@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-	<html>
+	<html xmlns:th="http://www.thymeleaf.org">
 		<head>
 			<meta charset="UTF-8">
 			<title>Inicio</title>
 		</head>
 		<body>
-			<h1>Hola Mundo</h1>
+			<h1 align="center">Empleados</h1>
+			<table border=1px align="center">
+				<tr>
+					<th>Nombre</th>
+					<th>Apellido</th>
+					<th>Email</th>
+					<th>Telefono</th>
+				</tr>
+				
+				<tr th:each="persona : ${personas}">
+					<td th:text="${persona.nombre}">
+					<td th:text="${persona.apellido}">
+					<td th:text="${persona.email}">
+					<td th:text="${persona.telefono}">
+			</table>
+			
+
+			
 		</body>
 	</html>
