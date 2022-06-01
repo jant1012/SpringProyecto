@@ -6,20 +6,36 @@
 		</head>
 		<body>
 			<h1 align="center">Empleados</h1>
+			<br/>
+			
+			
 			<table border=1px align="center">
 				<tr>
+					<th>ID</th>
 					<th>Nombre</th>
 					<th>Apellido</th>
 					<th>Email</th>
 					<th>Telefono</th>
+					<th>Modificar</th>
+					<th>Eliminar</th>
 				</tr>
 				
 				<tr th:each="persona : ${personas}">
+					<td th:text="${persona.id}">
 					<td th:text="${persona.nombre}">
 					<td th:text="${persona.apellido}">
 					<td th:text="${persona.email}">
 					<td th:text="${persona.telefono}">
+					<td> <a th:href="@{/empleados/modificar/} + ${persona.id}" th:text="Editar"></a>
+					<td> <a th:href="@{/empleados/eliminar/} + ${persona.id}" th:text="Eliminar"></a>
 			</table>
+			
+			<br/>
+
+			
+			<a href="/empleados/agregar">Agregar Empleado</a>
+			<a href="/empleados/modificar">Modificar Empleado</a>
+			<a href="/empleados/eliminar">Eliminar Empleado</a>
 			
 
 			
